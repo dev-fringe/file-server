@@ -6,11 +6,12 @@ import static io.undertow.Handlers.resource;
 public class FileServer {
 
 	public static void main(String[] args) {
-        Undertow server = Undertow.builder()
-                .addHttpListener(8080, "0.0.0.0")
-                .setHandler(resource(new PathResourceManager(Paths.get(System.getProperty("user.home")), 100))
-                        .setDirectoryListingEnabled(true))
-                .build();
-        server.start();
+        Undertow
+        .builder()
+        .addHttpListener(8080, "0.0.0.0")
+        .setHandler(
+        		resource(new PathResourceManager(Paths.get(System.getProperty("user.home")), 100)).setDirectoryListingEnabled(true))
+        .build()
+        .start();
 	}
 }
