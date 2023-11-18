@@ -7,7 +7,7 @@ public class FileServer {
 
 	public static void main(String[] args) {
         Undertow server = Undertow.builder()
-                .addHttpListener(8080, "localhost")
+                .addHttpListener(8080, "192.168.123.105")
                 .setHandler(resource(new PathResourceManager(Paths.get(System.getProperty("user.home")), 100))
                         .setDirectoryListingEnabled(true))
                 .build();
